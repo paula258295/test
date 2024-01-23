@@ -1,11 +1,10 @@
-import unittest
-from my_module import add_numbers
+import pytest
+from my_module import add
+import pytest
 
-class TestMyModule(unittest.TestCase):
+def test_add():
+    assert add(8, 1) == 9
+    assert add(1, 1) == 2
+    assert add(-1, 1) == 0
+    assert add(-5, -2) == -7
 
-    def test_add_numbers(self):
-        result = add_numbers(2, 3)
-        self.assertEqual(result, 5)
-
-if __name__ == '__main__':
-    unittest.main()
